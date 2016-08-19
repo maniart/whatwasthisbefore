@@ -2,7 +2,7 @@ const data = [
   {
     config: {
       background: 'white',
-      active: true,
+      active: false,
       takeover: null,
     },
     collection: [
@@ -75,7 +75,7 @@ const data = [
   {
     config: {
       background: 'black',
-      active: false,
+      active: true,
       takeover: null,
     },
     collection: [

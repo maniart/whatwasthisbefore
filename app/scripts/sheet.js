@@ -11,12 +11,15 @@ export default class Sheet extends Component {
   }
 
   _setBgColor(color) {
-    document.body.style.backgroundColor = color;
+    if(this.props.config.active) {
+      document.body.style.backgroundColor = color;
+    }
   }
 
   render() {
     return (
       <div style={{
+        display: this.props.config.active ? 'block' : 'none',
         position: 'absolute',
         width: `${width}px`,
         height: `${height}px`,
