@@ -5,6 +5,11 @@ export default class Sheet extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this._setBgColor(props.config.background);
+  }
+
+  _setBgColor(color) {
+    document.body.style.backgroundColor = color;
   }
 
   render() {

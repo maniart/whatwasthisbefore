@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Sheet from './sheet';
-import Placement from './placement';
 import data from './data';
 
-console.log('data', data)
 export default class App extends Component {
   constructor() {
     super();
@@ -14,22 +12,12 @@ export default class App extends Component {
   }
 
 
-
-  _createPlacements() {
-
-  }
-
-  _createSheets() {
-
-  }
-
   render() {
     return (
       <div>
-        { data.map((sheet, index) =>
-            <Sheet data={sheet} key={index} />
+        { data.map(({collection, config}, index) =>
+            <Sheet data={collection} config={config} key={index} />
         )}
-        <Placement foo={15} />
       </div>
     );
   }
