@@ -17,7 +17,10 @@ export default class Sheet extends Component {
               width: placement.width + 'px',
               height: placement.height + 'px',
               backgroundImage: `url('${placement.src}')`,
-              backgroundSize: 'cover'
+              backgroundSize: 'cover',
+              position: 'absolute',
+              top: placement.top + 'px',
+              left: placement.left + 'px'
           }}></div>
         )}
       </div>

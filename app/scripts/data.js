@@ -17,7 +17,7 @@ const data = [
     },
     {
       top: 0,
-      left: 0,
+      left: 722,
       width: 1104,
       height: 716,
       src: '../assets/sheet-0/2.png'
@@ -49,6 +49,21 @@ const data = [
       width: 628, 
       height: 424,
       src: '../assets/sheet-0/6.png'
+    },
+    ,
+    {
+      top: 734,
+      left: 0,
+      width: 1094,
+      height: 732, 
+      src: '../assets/sheet-0/7.png'
+    },
+    {
+      top: 734,
+      left: 1094,
+      width: 732, 
+      height: 732, 
+      src: '../assets/sheet-0/8.png'
     }
   ]
 ];
