@@ -112,7 +112,7 @@ const data = [
   {
     config: {
       background: 'black',
-      active: true,
+      active: false,
       takeover: null,
     },
     collection: [
@@ -150,6 +150,50 @@ const data = [
         width: 746,
         height: 988,
         src: '../assets/sheet-2/4.png'
+      }
+    ]
+  },
+  {
+    config: {
+      background: 'black',
+      active: true,
+      takeover: null,
+    },
+    collection: [
+      {
+        top: 0,
+        left: 0,
+        width: 1000,
+        height: 994,
+        src: '../assets/sheet-3/0.png'
+      },
+      {
+        top: 0,
+        left: 1020,
+        width: 1504,
+        height: 998,
+        src: '../assets/sheet-3/1.png'
+      },
+      {
+        top: 1015,
+        left: 0,
+        width: 1024,
+        height: 826,
+        src: '../assets/sheet-3/2.png'
+      },
+      {
+        top: 1015,
+        left: 1035,
+        width: 832,
+        height: 830, 
+        src: '../assets/sheet-3/3.png'
+      },
+      {
+        top: 1050,
+        left: 1887,
+        width: 598,
+        height: 748,
+        src: '../assets/sheet-3/4.png'
       }
     ]
   }
