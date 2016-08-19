@@ -15,7 +15,6 @@ export default class Sheet extends Component {
   }
 
   render() {
-    console.log('render here now')
     return (
       <div style={{
         position: 'absolute',

@@ -1,8 +1,9 @@
-
 const data = [
   {
     config: {
-      background: 'white'
+      background: 'white',
+      active: true,
+      takeover: null,
     },
     collection: [
       {
@@ -70,6 +71,43 @@ const data = [
       }
     ]
 
+  },
+  {
+    config: {
+      background: 'black',
+      active: false,
+      takeover: null,
+    },
+    collection: [
+      {
+        top: 1471,
+        left: 0,
+        width: 596,
+        height: 426, 
+        src: '../assets/sheet-1/0.png'
+      },
+      {
+        top: 0,
+        left: 0,
+        width: 722,
+        height: 728, 
+        src: '../assets/sheet-1/1.png'
+      },
+      {
+        top: 0,
+        left: 722,
+        width: 1104,
+        height: 716,
+        src: '../assets/sheet-1/2.png'
+      },
+      {
+        top: 0,
+        left: 1850,
+        width: 668,
+        height: 1190, 
+        src: '../assets/sheet-1/3.png'
+      }
+    ]
   }
 ];
 
