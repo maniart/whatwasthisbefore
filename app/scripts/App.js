@@ -14,7 +14,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{
+        minWidth: '100%',
+        minHeight: '100%'
+    }}>
         { data.map(({collection, config}, index) =>
             <Sheet data={collection} config={config} key={index} />
         )}
