@@ -1,8 +1,22 @@
 import React, {Component} from 'react';
 
 const Placement = ({
-  foo
+  width,
+  height,
+  top,
+  left,
+  src
 }) =>
-  <div>hola placement {foo}</div>;
+  <div
+    style={{
+      width: `${width}px`,
+      height: `${height}px`,
+      backgroundImage: `url('${src}')`,
+      backgroundSize: 'cover',
+      position: 'absolute',
+      top: `${top}px`,
+      left: `${left}px`
+  }}>
+  </div>;
 
 export default Placement;
