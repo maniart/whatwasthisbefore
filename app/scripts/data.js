@@ -80,31 +80,31 @@ const data = [
     },
     collection: [
       {
-        top: 1471,
+        top: 0,
         left: 0,
-        width: 596,
-        height: 426, 
+        width: 1804,
+        height: 1198, 
         src: '../assets/sheet-1/0.png'
       },
       {
         top: 0,
-        left: 0,
-        width: 722,
-        height: 728, 
+        left: 1820,
+        width: 670,
+        height: 1196, 
         src: '../assets/sheet-1/1.png'
       },
       {
-        top: 0,
-        left: 722,
-        width: 1104,
-        height: 716,
+        top: 1220,
+        left: 1660,
+        width: 866,
+        height: 692,
         src: '../assets/sheet-1/2.png'
       },
       {
-        top: 0,
-        left: 1850,
-        width: 668,
-        height: 1190, 
+        top: 1220,
+        left: 0,
+        width: 1650,
+        height: 672, 
         src: '../assets/sheet-1/3.png'
       }
     ]
