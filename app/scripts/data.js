@@ -75,7 +75,7 @@ const data = [
   {
     config: {
       background: 'black',
-      active: true,
+      active: false,
       takeover: null,
     },
     collection: [
@@ -106,6 +106,50 @@ const data = [
         width: 1650,
         height: 672, 
         src: '../assets/sheet-1/3.png'
+      }
+    ]
+  },
+  {
+    config: {
+      background: 'black',
+      active: true,
+      takeover: null,
+    },
+    collection: [
+      {
+        top: 0,
+        left: 0,
+        width: 1722,
+        height: 1148, 
+        src: '../assets/sheet-2/0.png'
+      },
+      {
+        top: 1156,
+        left: 0,
+        width: 940,
+        height: 700,
+        src: '../assets/sheet-2/1.png'
+      },
+      {
+        top: 1180,
+        left: 1000,
+        width: 726,
+        height: 728,
+        src: '../assets/sheet-2/2.png'
+      },
+      {
+        top: 1000,
+        left: 1750,
+        width: 724,
+        height: 874, 
+        src: '../assets/sheet-2/3.png'
+      },
+      {
+        top: 0,
+        left: 1750,
+        width: 746,
+        height: 988,
+        src: '../assets/sheet-2/4.png'
       }
     ]
   }
