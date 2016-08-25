@@ -9,12 +9,12 @@ export default class Sheet extends Component {
     super(props);
     this.state = {
       placements: props.data.slice(0),
-      swapIndex: 0
+      swapSrc: ''
     };
-    console.log('state', this.state);
     this.setBgColor(props.config.background);
     this.counter = 0;
-    this.count = this.count.bind(this);
+    this.swapSrcIndex = 0;
+    this.mouseEntered = this.mouseEntered.bind(this);
   }
 
   setBgColor(color) {
@@ -23,22 +23,18 @@ export default class Sheet extends Component {
     }
   }
 
-  updatePlacement(src) {
-
-  }
-
-  count() {
+  mouseEntered() {
     this.counter ++;
-    console.log('count: ', this.counter);
-  }
-
-  getSwapSrc() {
-    if(this.state.swapIndex ) {
-
-    } else {
-
+    const index = this.counter % this.state.placements.length;
+    if (index === this.state.placements.length - 1) {
+      this.swapSrcIndex = this.swapSrcIndex === this.state.placements.length - 1
+        ? 0
+        : this.swapSrcIndex + 1;
+        console.log('this.swapSrcIndex = ', this.swapSrcIndex);
     }
-    return this.state.placements[this.state.swapIndex].src;
+    this.setState({
+      swapSrc: this.state.placements[this.swapSrcIndex].src
+    });
   }
 
   render() {
@@ -55,8 +51,8 @@ export default class Sheet extends Component {
         {this.state.placements.map((spec, index) =>
           <Placement
             {...spec}
-            mouseEntered={this.count}
-            swap={this.getSwapSrc()}
+            mouseEntered={this.mouseEntered}
+            swap={this.state.swapSrc}
             key={index} />
         )}
       </div>
