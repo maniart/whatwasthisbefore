@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('camera.js')
 /*
   shim requestAnimationFrame api
   source: http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -325,7 +325,8 @@ function drawGrid(matrix) {
       var column = row[j];
       imageData = rawCtx.getImageData(0, 0, CELL_WIDTH, CELL_HEIGHT);
       if(column < 250) {
-        gridCtx.putImageData(imageData, i * CELL_WIDTH, j * CELL_HEIGHT);
+        console.log(i * CELL_WIDTH, j * CELL_HEIGHT)
+        //gridCtx.putImageData(imageData, i * CELL_WIDTH, j * CELL_HEIGHT);
       }
     }
 
