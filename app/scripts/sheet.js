@@ -12,10 +12,12 @@ export default class Sheet extends Component {
       swapIndex: 0
     };
     console.log('state', this.state);
-    this._setBgColor(props.config.background);
+    this.setBgColor(props.config.background);
+    this.counter = 0;
+    this.count = this.count.bind(this);
   }
 
-  _setBgColor(color) {
+  setBgColor(color) {
     if(this.props.config.active) {
       document.body.style.backgroundColor = color;
     }
@@ -25,7 +27,17 @@ export default class Sheet extends Component {
 
   }
 
+  count() {
+    this.counter ++;
+    console.log('count: ', this.counter);
+  }
+
   getSwapSrc() {
+    if(this.state.swapIndex ) {
+
+    } else {
+
+    }
     return this.state.placements[this.state.swapIndex].src;
   }
 
@@ -43,6 +55,7 @@ export default class Sheet extends Component {
         {this.state.placements.map((spec, index) =>
           <Placement
             {...spec}
+            mouseEntered={this.count}
             swap={this.getSwapSrc()}
             key={index} />
         )}
