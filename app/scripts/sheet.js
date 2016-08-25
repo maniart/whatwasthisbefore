@@ -7,6 +7,11 @@ const height  = 1898;
 export default class Sheet extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      placements: props.data.slice(0),
+      swapIndex: 0
+    };
+    console.log('state', this.state);
     this._setBgColor(props.config.background);
   }
 
@@ -14,6 +19,14 @@ export default class Sheet extends Component {
     if(this.props.config.active) {
       document.body.style.backgroundColor = color;
     }
+  }
+
+  updatePlacement(src) {
+
+  }
+
+  getSwapSrc() {
+    return this.state.placements[this.state.swapIndex].src;
   }
 
   render() {
@@ -27,9 +40,10 @@ export default class Sheet extends Component {
         left: '50%',
         transform: 'translate(-50%, -50%)',
       }}>
-        {this.props.data.map((spec, index) =>
+        {this.state.placements.map((spec, index) =>
           <Placement
             {...spec}
+            swap={this.getSwapSrc()}
             key={index} />
         )}
       </div>

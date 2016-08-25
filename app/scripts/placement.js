@@ -5,9 +5,13 @@ const Placement = ({
   height,
   top,
   left,
-  src
+  src,
+  swap
 }) =>
   <div
+    onMouseEnter={(e)=> {
+      e.target.style.backgroundImage = `url('${swap}')`;
+    }}
     style={{
       width: `${width}px`,
       height: `${height}px`,
