@@ -1,7 +1,10 @@
 import React  from 'react';
 import Sheet  from './sheet';
 import data   from './data';
+
+
 const scale = 0.3;
+
 const App = () =>
   <div
     style={{

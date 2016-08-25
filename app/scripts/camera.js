@@ -1,5 +1,5 @@
 'use strict';
-console.log('camera.js')
+// console.log('camera.js')
 /*
   shim requestAnimationFrame api
   source: http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -187,6 +187,15 @@ var PI = Math.PI;
 var GRID_RESOLUTION_X = 8;
 var GRID_RESOLUTION_Y = 8;
 
+var grid = window.grid = [];
+for(var i = 0; i < GRID_RESOLUTION_X; i ++) {
+  var row = [];
+  for(var j = 0; j < GRID_RESOLUTION_Y; j ++) {
+    row.push(false);
+  }
+  grid.push(row);
+}
+
 /*
   grid cell resolution
 */
@@ -324,8 +333,19 @@ function drawGrid(matrix) {
     for(var j = 0; j < row.length; j += 1) {
       var column = row[j];
       imageData = rawCtx.getImageData(0, 0, CELL_WIDTH, CELL_HEIGHT);
+      grid[i][j] = false;
       if(column < 250) {
-        console.log(i * CELL_WIDTH, j * CELL_HEIGHT)
+        grid[i][j] = true;
+        console.log(i,j, grid[i][j]);
+        // for(var k = 0; k < grid.length; k ++) {
+        //   for(var t = 0; t < grid[k].length; t ++) {
+        //     grid[k][t] = false;
+        //   }
+        // }
+        // console.log('done resetting grid');
+
+        // console.log('created event: ', window.hitEvent);
+        // console.log('dispatched event');
         //gridCtx.putImageData(imageData, i * CELL_WIDTH, j * CELL_HEIGHT);
       }
     }
@@ -398,21 +418,27 @@ function loop() {
 /*
   kickstart the process
 */
-getUserMedia(constraints)
-  .then(
-    function(stream) {
-      // order is important
-      var input = window.URL.createObjectURL(stream);
-      differ.addEventListener('message', drawBlendImage);
-      toggleBtn.addEventListener('click', toggle);
-      [rawCanvas, blendCanvas].forEach(mirror);
-      pipe(input, rawVideo);
-      loop();
 
-    }
-  )
-  .catch(
-    function(error) {
-      console.error('Failed to draw camera input to video ', error);
-    }
-  );
+/*
+  kickstart the process
+*/
+module.exports = function() {
+  return getUserMedia(constraints)
+    .then(
+      function(stream) {
+        // order is important
+        var input = window.URL.createObjectURL(stream);
+        differ.addEventListener('message', drawBlendImage);
+        toggleBtn.addEventListener('click', toggle);
+        [rawCanvas, blendCanvas].forEach(mirror);
+        pipe(input, rawVideo);
+        loop();
+
+      }
+    )
+    .catch(
+      function(error) {
+        console.error('Failed to draw camera input to video ', error);
+      }
+    );
+}

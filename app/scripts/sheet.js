@@ -23,6 +23,10 @@ export default class Sheet extends Component {
     }
   }
 
+  componentDidMount() {
+    
+  }
+
   mouseEntered() {
     this.counter ++;
     const index = this.counter % this.state.placements.length;
