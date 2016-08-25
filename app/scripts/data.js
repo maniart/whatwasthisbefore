@@ -3,7 +3,6 @@ const data = [
     config: {
       background: 'white',
       active: false,
-      takeover: null,
     },
     collection: [
       {
@@ -76,7 +75,6 @@ const data = [
     config: {
       background: 'black',
       active: false,
-      takeover: null,
     },
     collection: [
       {
@@ -113,7 +111,6 @@ const data = [
     config: {
       background: 'black',
       active: false,
-      takeover: null,
     },
     collection: [
       {
@@ -157,7 +154,6 @@ const data = [
     config: {
       background: 'black',
       active: true,
-      takeover: null,
     },
     collection: [
       {

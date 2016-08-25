@@ -42,8 +42,8 @@ export default class Sheet extends Component {
       <div style={{
         display: this.props.config.active ? 'block' : 'none',
         position: 'absolute',
-        width: `${width}px`,
-        height: `${height}px`,
+        width: `${width * this.props.scale}px`,
+        height: `${height * this.props.scale}px`,
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
@@ -51,6 +51,7 @@ export default class Sheet extends Component {
         {this.state.placements.map((spec, index) =>
           <Placement
             {...spec}
+            scale={this.props.scale}
             mouseEntered={this.mouseEntered}
             swap={this.state.swapSrc}
             key={index} />

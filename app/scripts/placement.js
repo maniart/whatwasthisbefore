@@ -7,6 +7,7 @@ const Placement = ({
   left,
   src,
   swap,
+  scale,
   mouseEntered = () => {}
 }) =>
   <div
@@ -15,13 +16,13 @@ const Placement = ({
       mouseEntered();
     }}
     style={{
-      width: `${width}px`,
-      height: `${height}px`,
+      width: `${width * scale}px`,
+      height: `${height * scale}px`,
       backgroundImage: `url('${src}')`,
       backgroundSize: 'cover',
       position: 'absolute',
-      top: `${top}px`,
-      left: `${left}px`
+      top: `${top * scale}px`,
+      left: `${left * scale}px`
   }}>
   </div>;
 
