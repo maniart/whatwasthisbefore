@@ -24,7 +24,12 @@ export default class Sheet extends Component {
   }
 
   componentDidMount() {
-    
+    // console.log('componentDidMount');
+    // document.addEventListener(window.hitEvent, ({ detail }) => {
+    //   console.log('details: ', detail);
+    // });
+    // console.log('____________________________________ registered event ', window.hitEvent)
+    // console.log('registered')
   }
 
   mouseEntered() {

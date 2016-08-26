@@ -336,7 +336,7 @@ function drawGrid(matrix) {
       grid[i][j] = false;
       if(column < 250) {
         grid[i][j] = true;
-        console.log(i,j, grid[i][j]);
+        console.log(i,j)
         // for(var k = 0; k < grid.length; k ++) {
         //   for(var t = 0; t < grid[k].length; t ++) {
         //     grid[k][t] = false;

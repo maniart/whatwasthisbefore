@@ -1,5 +1,4 @@
 'use strict';
-
 /*
   shim requestAnimationFrame api
   source: http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -385,21 +384,24 @@ function loop() {
 /*
   kickstart the process
 */
-getUserMedia(constraints)
-  .then(
-    function(stream) {
-      // order is important
-      var input = window.URL.createObjectURL(stream);
-      differ.addEventListener('message', drawBlendImage);
-      toggleBtn.addEventListener('click', toggle);
-      [rawCanvas, blendCanvas].forEach(mirror);
-      pipe(input, rawVideo);
-      loop();
 
-    }
-  )
-  .catch(
-    function(error) {
-      console.error('Failed to draw camera input to video ', error);
-    }
-  );
+function init() {
+  return getUserMedia(constraints)
+    .then(
+      function(stream) {
+        // order is important
+        var input = window.URL.createObjectURL(stream);
+        differ.addEventListener('message', drawBlendImage);
+        toggleBtn.addEventListener('click', toggle);
+        [rawCanvas, blendCanvas].forEach(mirror);
+        pipe(input, rawVideo);
+        loop();
+
+      }
+    )
+    .catch(
+      function(error) {
+        console.error('Failed to draw camera input to video ', error);
+      }
+    );
+}
